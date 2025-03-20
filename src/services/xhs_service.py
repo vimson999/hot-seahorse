@@ -108,7 +108,76 @@ class XHSService:
         except Exception as e:
             logger.exception(f"搜索笔记异常: {e}")
             return False, f"搜索异常: {str(e)}", None
-    
+
+
+
+    def get_user_info(self, user_url, proxies=None):
+        """
+        获取用户信息
+        
+        Args:
+            user_url: 用户主页URL
+            proxies: 代理配置
+            
+        Returns:
+            (success, msg, user_info): 成功状态、消息和用户信息
+        """
+        try:
+            # 从 URL 中提取 user_id
+            import urllib.parse
+            urlParse = urllib.parse.urlparse(user_url)
+            user_id = urlParse.path.split("/")[-1]
+            
+            success, msg, user_info = self.xhs_apis.get_user_info(user_id, self.cookies_str, proxies)
+            if success:
+                user_info = user_info['data']
+                return True, "获取用户信息成功", user_info
+            return False, f"获取用户信息失败: {msg}", None
+        except Exception as e:
+            logger.exception(f"获取用户信息异常: {e}")
+            return False, f"获取异常: {str(e)}", None
+
+    def get_note_comments(self, note_url, proxies=None):
+        """
+        获取笔记的所有评论
+        
+        Args:
+            note_url: 笔记URL
+            proxies: 代理配置
+            
+        Returns:
+            (success, msg, comments): 成功状态、消息和评论列表
+        """
+        try:
+            success, msg, comments = self.xhs_apis.get_note_all_comment(note_url, self.cookies_str, proxies)
+            if success:
+                return True, f"获取评论成功，共{len(comments)}条", comments
+            return False, f"获取评论失败: {msg}", None
+        except Exception as e:
+            logger.exception(f"获取笔记评论异常: {e}")
+            return False, f"获取异常: {str(e)}", None
+
+    def get_search_keywords(self, keyword, proxies=None):
+        """
+        获取搜索关键词推荐
+        
+        Args:
+            keyword: 搜索关键词
+            proxies: 代理配置
+            
+        Returns:
+            (success, msg, keywords): 成功状态、消息和关键词列表
+        """
+        try:
+            success, msg, keywords = self.xhs_apis.get_search_keyword(keyword, self.cookies_str, proxies)
+            if success:
+                keywords_list = keywords['data']['keyword_list']
+                return True, f"获取搜索关键词成功，共{len(keywords_list)}条", keywords_list
+            return False, f"获取搜索关键词失败: {msg}", None
+        except Exception as e:
+            logger.exception(f"获取搜索关键词异常: {e}")
+            return False, f"获取异常: {str(e)}", None
+        
     def get_user_notes(self, user_url, proxies=None):
         """
         获取用户的所有笔记
