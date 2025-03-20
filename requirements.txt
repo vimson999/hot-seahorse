@@ -3,3 +3,15 @@ lxml
 PyYAML
 pydantic
 pytest
+requests
+
+
+
+yt_dlp
+PyExecJS
+requests
+loguru
+python-dotenv
+retry
+openpyxl
+
