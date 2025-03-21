@@ -24,6 +24,8 @@ mkdir -p src/libs
 git submodule add https://github.com/cv-cat/Spider_XHS.git src/libs/spider_xhs
 git submodule update --init --recursive
 
+
+
 2. 处理依赖关系
 # 将Spider_XHS的需求添加到您的项目
 cat src/libs/spider_xhs/requirements.txt >> requirements.txt
@@ -38,6 +40,10 @@ cd src/libs/spider_xhs
 npm install
 
 
+git submodule add https://github.com/vimson999/TikTokDownloader.git src/libs/tiktok_downloader
+pip install -r requirements.txt
+
+pip install --upgrade pip setuptools
 
 
 
@@ -111,3 +117,20 @@ javascriptCopytry {
 扩展测试覆盖：编写更多测试用例，覆盖各种场景和边界情况
 
 这个集成方案成功地解决了最初的技术问题，使您能够在项目中利用 Spider_XHS 的功能获取小红书的数据。通过测试验证，集成后的功能可以正常工作。
+
+
+kIY3FmRG+UsN4RQj6Ea8pFoBhBQOqqWHlqhXy2nEuU8S7A4LccFj1AC4Pg==
+
+kb8MYVxz60AU+HU1imWLqSU1xCoQ0biDsYp3/TzLi1ZzzmU1c95h6g6pUw==
+
+
+
+# 使用官方推荐的 rustup 安装
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# 或者使用 Homebrew（macOS）
+brew install rust
+选择1 回车
+
+source "$HOME/.cargo/env"
+pip install rookiepy
+

@@ -1,17 +1,31 @@
-httpx
-lxml
+# 基础依赖
+httpx[socks]>=0.28.1
+lxml>=5.3.1
 PyYAML
-pydantic
+pydantic>=2.10.6
 pytest
 requests
 
-
-
+# 视频下载和处理
 yt_dlp
-PyExecJS
-requests
-loguru
+ffmpeg-python
+tqdm
+
+# 额外工具
+aiofiles>=24.1.0
+aiosqlite>=0.21.0
+emoji>=2.14.1
+openpyxl>=3.1.5
+qrcode>=8.0
+rich>=13.9.4
+# rookiepy>=0.5.6
+
+# 可选依赖
+gmssl>=3.2.2
+pyppeteer
+selenium
 python-dotenv
 retry
-openpyxl
-
+loguru
+PyExecJS
+beautifulsoup4

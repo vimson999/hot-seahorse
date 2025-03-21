@@ -5,6 +5,46 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hot-seahorse"
 version = "0.1.0"
+dependencies = [
+    # 核心依赖
+    "httpx[socks]>=0.28.1",
+    "lxml>=5.3.1",
+    "PyYAML",
+    "pydantic>=2.10.6",
+    "pytest",
+    "requests",
+
+    # 视频下载相关
+    "yt_dlp",
+    "ffmpeg-python",
+    "tqdm",
+    "rookiepy>=0.5.6",
+
+    # 功能扩展依赖
+    "aiofiles>=24.1.0",
+    "aiosqlite>=0.21.0",
+    "emoji>=2.14.1",
+    "openpyxl>=3.1.5",
+    "qrcode>=8.0",
+    "rich>=13.9.4",
+
+    # 可选依赖（建议根据实际需求安装）
+    "gmssl>=3.2.2",
+    "pyppeteer",
+    "selenium",
+    "python-dotenv",
+    "retry",
+    "loguru",
+    "PyExecJS",
+    "beautifulsoup4"
+]
+
+[tool.setuptools]
+packages = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = [".", "src"]
+pythonpath = [
+    ".", 
+    "src", 
+    "src/libs/tiktok_downloader"
+]

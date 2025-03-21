@@ -1,3 +1,8 @@
-# src/services/__init__.py
-# 更新导入语句以匹配新的XHSService类
-from .xhs_service import XHSService
+from .xhs_service import extract_xhs_content
+from .tiktok_service import extract_tiktok_content, download_tiktok_video
+
+__all__ = [
+    'extract_xhs_content', 
+    'extract_tiktok_content', 
+    'download_tiktok_video'
+]
