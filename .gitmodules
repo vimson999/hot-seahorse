@@ -1,3 +1,6 @@
 [submodule "src/libs/spider_xhs"]
 	path = src/libs/spider_xhs
 	url = https://github.com/cv-cat/Spider_XHS.git
+[submodule "src/libs/tiktok_downloader"]
+	path = src/libs/tiktok_downloader
+	url = https://github.com/vimson999/TikTokDownloader.git
