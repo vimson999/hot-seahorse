@@ -3,3 +3,6 @@ lxml
 PyYAML
 pydantic
 pytest
+
+faster-whisper
+openai-whisper
