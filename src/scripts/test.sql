@@ -134,3 +134,23 @@ brew install rust
 source "$HOME/.cargo/env"
 pip install rookiepy
 
+
+https://www.douyin.com/video/7475254041207950642
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+
+
+
+
+# 在您的项目根目录执行
+mkdir -p src/bot_api_v1/libs
+git submodule add https://github.com/vimson999/Spider_XHS.git src/bot_api_v1/libs/spider_xhs
+git submodule update --init --recursive
+
+
+
+cat src/bot_api_v1/libs/spider_xhs/requirements.txt >> requirements.txt
+pip install -r requirements.txt
+
+cd src/bot_api_v1/libs/spider_xhs
+npm install
