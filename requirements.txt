@@ -29,3 +29,6 @@ retry
 loguru
 PyExecJS
 beautifulsoup4
+
+faster-whisper
+openai-whisper
