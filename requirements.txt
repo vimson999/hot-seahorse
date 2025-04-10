@@ -32,3 +32,8 @@ beautifulsoup4
 
 faster-whisper
 openai-whisper
+
+
+
+
+librosa
